@@ -1,0 +1,8 @@
+{
+  "name": "thoughtful-dev",
+  "description": "Transform Claude Code into a thoughtful development partner with requirements clarification, implementation planning, and breakthrough generation. Includes safety-first git workflow, black-box architecture principles, and progressive documentation templates.",
+  "version": "1.0.2",
+  "author": {
+    "name": "Neno73"
+  }
+}

@@ -7,6 +7,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.0.2] - 2025-10-26
+
+### 🐛 Critical Fix - Correct Plugin Structure
+
+**Plugin Configuration:**
+- **MOVED:** `plugin.json` from root to `.claude-plugin/` directory (correct location per docs)
+- **SIMPLIFIED:** `plugin.json` to only required fields (name, description, version, author)
+- **REMOVED:** Incorrect "skills" array - skills are auto-discovered from `skills/` directory
+- **VERIFIED:** Structure matches official Claude Code plugin documentation
+
+**What This Fixes:**
+- Plugin now follows the exact structure specified in Claude Code documentation
+- Skills are auto-discovered from the `skills/` directory as intended
+- No custom fields needed in plugin.json for skill registration
+
+### Technical Details
+
+Per the official docs: "Plugin Skills are automatically available when the plugin is installed." Skills should be in a `skills/` directory and do NOT need to be registered in plugin.json. The plugin.json should only contain basic metadata (name, description, version, author) and must be located in `.claude-plugin/` directory, not at the root.
+
+---
+
 ## [1.0.1] - 2025-10-26
 
 ### 🐛 Critical Bug Fixes
