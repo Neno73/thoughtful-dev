@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Transform Claude Code into a thoughtful development partner with requirements clarification, implementation planning, and breakthrough generation",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "pluginRoot": "./"
   },
   "plugins": [
@@ -14,7 +14,7 @@
       "name": "thoughtful-dev",
       "source": "./",
       "description": "Complete thoughtful development workflow with 3 core skills: requirements-clarifier (prevents premature coding), implementation-planner (analyzes approaches and risks), and breakthrough-generator (systematic problem-solving when stuck). Includes safety-first git workflow, black-box architecture principles, and progressive documentation templates.",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "author": {
         "name": "Neno73",
         "email": "[email protected]"

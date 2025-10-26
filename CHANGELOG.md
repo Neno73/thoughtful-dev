@@ -7,6 +7,58 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.0.4] - 2025-10-26
+
+### 🎯 Enhanced: Proper CLAUDE.md Memory Architecture
+
+**Updated `/thoughtful-dev:init-project` command:**
+
+Now creates the **optimal hierarchical memory structure** per CLAUDE.md Protocol:
+
+**1. Root CLAUDE.md (Lean Manifest)**
+- Auto-discovered and loaded by Claude every session
+- Contains only essential, always-relevant context:
+  * Project description
+  * Core commands (dev, test, build)
+  * Mandatory rules (TDD, git workflow, DO NOT touch areas)
+- Uses `@import` statements to reference detailed docs
+
+**2. Modular .claude/ Documentation**
+- Detailed docs loaded on-demand via @import
+- Prevents context pollution while maintaining comprehensive knowledge
+- Files: INDEX.md, STACK.md, ARCHITECTURE.md, PATTERNS.md, STARTUP.md, GOTCHAS.md, DECISIONS.md
+
+**Key Architecture Pattern:**
+```
+project/
+├── CLAUDE.md              ← Claude's entry point (lean, with @imports)
+└── .claude/
+    ├── INDEX.md           ← Human-friendly directory
+    ├── STACK.md           ← Imported when working on stack
+    ├── ARCHITECTURE.md    ← Imported when refactoring
+    ├── PATTERNS.md        ← Imported when coding
+    ├── STARTUP.md         ← Imported when setting up
+    ├── GOTCHAS.md         ← Imported when troubleshooting
+    └── DECISIONS.md       ← Imported for context on past choices
+```
+
+**Benefits:**
+- ✅ Auto-discovery: CLAUDE.md loaded every session
+- ✅ Context hygiene: Lean root prevents pollution
+- ✅ Progressive disclosure: Detailed docs pulled only when needed
+- ✅ Modular: Easy to update specific aspects
+- ✅ Dual-use: Serves both humans and Claude
+
+### Technical Details
+
+Based on [The CLAUDE.md Protocol](https://engineering-blog.anthropic.com) and [official memory docs](https://docs.claude.com/en/docs/claude-code/memory):
+- Hierarchical memory system: Enterprise → User → Project → Subdirectory
+- @import syntax for modular composition
+- Prevents context bloat in long sessions
+- Living documentation that evolves with project
+
+---
+
 ## [1.0.3] - 2025-10-26
 
 ### ✨ New Features - Intelligent Initialization Commands
