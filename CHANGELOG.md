@@ -7,6 +7,51 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.0.3] - 2025-10-26
+
+### ✨ New Features - Intelligent Initialization Commands
+
+**Added Two Slash Commands:**
+
+1. **`/thoughtful-dev:init-project [project-name]`**
+   - Analyzes your existing codebase intelligently
+   - Discovers tech stack from package.json and project files
+   - Extracts actual architecture patterns from code structure
+   - Documents real code conventions (not generic best practices)
+   - Finds startup commands from package.json scripts
+   - Identifies gotchas from TODO/FIXME comments
+   - Creates `.claude/` directory with 7 intelligent documentation files:
+     * INDEX.md - Documentation directory
+     * STACK.md - Actual tech stack with versions
+     * ARCHITECTURE.md - Real system design
+     * PATTERNS.md - Observed code patterns
+     * DECISIONS.md - Decision log template
+     * STARTUP.md - Project commands
+     * GOTCHAS.md - Known issues
+
+2. **`/thoughtful-dev:init-personal`**
+   - Sets up `~/.claude/CLAUDE.md` with thoughtful development methodology
+   - Checks for existing configuration before overwriting
+   - Helps customize tech stack section
+   - Provides merge options if CLAUDE.md exists
+
+**How It Works (Like `/init`):**
+- Both commands analyze before creating documentation
+- Document WHAT EXISTS, not what SHOULD exist
+- Project-specific, not generic templates
+- Ask permission before overwriting
+- Living documentation that grows with projects
+
+### Technical Details
+
+Commands are in the `commands/` directory and follow Claude Code slash command conventions:
+- Frontmatter with description and argument hints
+- Use `$ARGUMENTS` for parameters
+- Leverage Explore agent for codebase analysis
+- Use `${CLAUDE_PLUGIN_ROOT}` for plugin files
+
+---
+
 ## [1.0.2] - 2025-10-26
 
 ### 🐛 Critical Fix - Correct Plugin Structure

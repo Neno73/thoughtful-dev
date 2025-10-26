@@ -1,0 +1,180 @@
+---
+description: Analyze codebase and initialize thoughtful development documentation
+argument-hint: [project-name]
+---
+
+# Thoughtful Dev - Initialize Project Documentation
+
+You are setting up the Thoughtful Dev documentation structure by **analyzing the existing codebase** and creating intelligent, project-specific documentation.
+
+## Project Information
+
+Project name: $ARGUMENTS (or detect from package.json/directory name if not provided)
+
+## Your Task: Analyze First, Then Document
+
+### Step 1: Analyze the Codebase
+
+**IMPORTANT:** Do NOT just copy empty templates. Analyze the project first!
+
+Examine the codebase to understand:
+
+1. **Tech Stack** (for STACK.md)
+   - Check package.json, requirements.txt, Gemfile, go.mod, Cargo.toml
+   - Identify framework (Next.js, React, Vue, etc.)
+   - Database (PostgreSQL, MongoDB, etc.)
+   - Key dependencies and their purposes
+   - Deployment platform (Vercel, AWS, Heroku, etc.)
+
+2. **Architecture** (for ARCHITECTURE.md)
+   - Directory structure and organization
+   - How components/modules are organized
+   - Data flow patterns
+   - API structure (REST, GraphQL, tRPC, etc.)
+   - State management approach
+   - Authentication/authorization patterns
+
+3. **Code Patterns** (for PATTERNS.md)
+   - File naming conventions (camelCase, kebab-case, etc.)
+   - Component structure (hooks, props patterns)
+   - Error handling patterns
+   - API call patterns
+   - Testing patterns (if tests exist)
+   - Import organization
+
+4. **Startup Commands** (for STARTUP.md)
+   - Find dev/build/test commands in package.json scripts
+   - Environment setup requirements (.env.example)
+   - Database setup/migration commands
+   - How to run single tests
+   - Common development workflows
+
+5. **Known Issues** (for GOTCHAS.md)
+   - Check for TODO/FIXME comments
+   - Look for workarounds in code comments
+   - Check existing README or docs for known issues
+
+### Step 2: Create .claude Directory Structure
+
+```bash
+mkdir -p .claude
+```
+
+If `.claude/` already exists, **ASK** the user if they want to overwrite existing files.
+
+### Step 3: Generate Intelligent Documentation
+
+Create these files with **actual project-specific content** based on your analysis:
+
+**INDEX.md** - Directory of documentation
+- List all the documentation files
+- Add current timestamp
+- Customize descriptions for this specific project
+
+**STACK.md** - Tech stack discovered from analysis
+- Document the ACTUAL stack found in the project
+- Explain WHY each technology was likely chosen
+- Note version numbers from package.json/lock files
+
+**ARCHITECTURE.md** - System design based on code structure
+- Document the ACTUAL architecture you discovered
+- Include component hierarchy
+- Show data flow patterns found in the code
+- Describe module boundaries
+
+**PATTERNS.md** - Code conventions found in the codebase
+- Document ACTUAL patterns used consistently in this project
+- File naming conventions you observed
+- Component/function structure patterns
+- Import organization style
+- NOT generic best practices - THIS project's patterns
+
+**DECISIONS.md** - Start with timestamp, empty for user to fill
+```markdown
+# Architectural Decisions
+
+*Last updated: YYYY-MM-DD HH:MM*
+
+This log tracks significant architectural decisions made during development.
+
+## Decision Template
+
+When adding a decision, include:
+- **Date**: When the decision was made
+- **Context**: What problem we're solving
+- **Decision**: What we decided to do
+- **Consequences**: Trade-offs and implications
+
+---
+
+## [YYYY-MM-DD] Initial Project Setup
+
+**Context:** Project initialized with thoughtful-dev documentation structure.
+
+**Decision:** Analyzed codebase and documented existing architecture, stack, and patterns.
+
+**Consequences:** Team has shared understanding of current state. Future decisions will be logged here.
+```
+
+**STARTUP.md** - Commands discovered from package.json and project files
+- ACTUAL dev/build/test commands from this project
+- Environment variables needed (from .env.example or code analysis)
+- Database setup steps (if database detected)
+- How to run single tests (actual test commands)
+- Port numbers, URLs, credentials locations
+
+**GOTCHAS.md** - Issues found during analysis
+- Document any TODO/FIXME comments found
+- Note unusual dependencies or configurations
+- Mention if setup seems incomplete
+- Empty template if nothing obvious found
+
+### Step 4: Verify and Report
+
+After creating documentation:
+
+1. List all created files with line counts
+2. Highlight what was discovered about the project
+3. Point out any gaps or questions that need human input
+4. Show summary of tech stack, patterns, and setup commands
+
+## Important Principles
+
+**DO:**
+- Use the Explore agent or Task tool to analyze the codebase thoroughly
+- Read actual files (package.json, main components, config files)
+- Document what EXISTS, not what SHOULD exist
+- Be specific with examples from the actual code
+- Add timestamps in YYYY-MM-DD HH:MM format
+- Ask before overwriting existing .claude/ files
+
+**DON'T:**
+- Copy generic templates without analysis
+- Make assumptions about tech stack - verify it
+- Document ideal patterns - document ACTUAL patterns
+- Skip the analysis step
+- Overwrite files without permission
+- Use placeholder text - use real project data
+
+## After Completion
+
+Tell the user:
+
+1. **What was discovered:**
+   - Tech stack summary
+   - Key architectural patterns
+   - Main entry points and commands
+
+2. **What to customize:**
+   - Review STACK.md for accuracy
+   - Review PATTERNS.md - are these the patterns they want?
+   - Fill in DECISIONS.md as decisions are made
+   - Update GOTCHAS.md as issues are discovered
+
+3. **How to use:**
+   - Read `.claude/INDEX.md` first
+   - Use progressive disclosure - only read relevant files
+   - Update docs when architecture/patterns change
+   - Use DECISIONS.md to log significant choices
+
+This is a living documentation system that grows with the project!
