@@ -39,11 +39,6 @@
         "documentation"
       ],
       "category": "productivity",
-      "commands": [
-        "./skills/requirements-clarifier/SKILL.md",
-        "./skills/implementation-planner/SKILL.md",
-        "./skills/breakthrough-generator/SKILL.md"
-      ],
       "strict": false
     }
   ]
