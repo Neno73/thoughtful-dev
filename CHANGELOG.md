@@ -7,6 +7,214 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.0.5] - 2025-10-26
+
+### 🔄 New Feature - Documentation Maintenance System (Phase 1)
+
+**Problem Solved:** Documentation becomes outdated as code evolves, creating drift between docs and reality.
+
+**Solution:** Automated maintenance system that detects drift and keeps documentation current.
+
+---
+
+#### 1. New Skill: `doc-maintenance` (Auto-Reminder)
+
+**Activates automatically after:**
+- Implementing new features
+- Adding/removing dependencies (package.json changes)
+- Refactoring code structure
+- Changing architecture or patterns
+
+**What it does:**
+```
+You: "Added React Query for data fetching"
+
+doc-maintenance skill:
+"I noticed new patterns introduced.
+
+Documentation updates needed:
+📦 STACK.md - Add @tanstack/react-query
+📝 PATTERNS.md - Document React Query pattern
+
+Update now? (yes/no/auto)"
+```
+
+**Features:**
+- ✅ **Ask mode** (default): Prompts before updating
+- ✅ **Auto mode**: Updates automatically if enabled in CLAUDE.md
+- ✅ Detects which docs need updates (STACK, PATTERNS, ARCHITECTURE, etc.)
+- ✅ Offers specific fixes, not vague suggestions
+- ✅ Prevents documentation drift in real-time
+
+**Enable auto-updates:**
+Add to CLAUDE.md:
+```markdown
+## Documentation Maintenance
+Mode: auto
+```
+
+---
+
+#### 2. New Command: `/thoughtful-dev:audit-docs`
+
+**Purpose:** Comprehensive drift detection for periodic checks
+
+**What it checks:**
+- 📦 **STACK.md** - Missing/outdated dependencies, version mismatches
+- 📝 **PATTERNS.md** - Documented patterns vs actual code patterns
+- 🏗️ **ARCHITECTURE.md** - Directory structure, API endpoints, data flow
+- ⚙️ **STARTUP.md** - package.json scripts changes
+- ⚠️ **GOTCHAS.md** - Resolved issues, new workarounds
+
+**Output - Concise Report:**
+```
+# 📋 Documentation Audit Report
+
+## 📊 Summary
+✓ 4 files up to date
+⚠️ 2 files with minor drift
+✗ 1 file with major drift
+
+## 📦 STACK.md - ✗ Major Drift
+Missing: @tanstack/react-query@5.0.0
+Version mismatch: React 18.2.0 → 18.3.1
+
+## 📝 PATTERNS.md - ⚠️ Minor Drift
+Docs mention Redux, code uses Zustand
+
+## 📝 Action Items
+1. HIGH: Update STACK.md (2 changes)
+2. MEDIUM: Update PATTERNS.md (1 change)
+```
+
+**When to run:**
+- Weekly during active development
+- Before releases/milestones
+- When suspicious of drift
+
+---
+
+#### 3. Enhanced: `/thoughtful-dev:init-project`
+
+**Updated to include maintenance instructions:**
+
+Generated CLAUDE.md now includes:
+```markdown
+## Documentation Maintenance
+Mode: ask
+
+The `doc-maintenance` skill will remind you to update docs after:
+- Adding/removing dependencies
+- Changing architecture or patterns
+- Refactoring code structure
+
+Run `/thoughtful-dev:audit-docs` periodically to check for drift.
+```
+
+Users learn about maintenance from project initialization.
+
+---
+
+### How the System Works Together
+
+**Real-time Prevention (Skill):**
+```
+[User adds new dependency]
+→ doc-maintenance skill activates
+→ "STACK.md needs update - add now?"
+→ Drift prevented immediately
+```
+
+**Periodic Detection (Command):**
+```
+[Before release]
+→ User runs /audit-docs
+→ Comprehensive drift report generated
+→ Fix accumulated issues
+```
+
+**Both create feedback loop:** Skill catches most drift, audit catches what slipped through.
+
+---
+
+### Drift Detection Priorities (What We Monitor)
+
+**HIGH Priority:**
+1. Tech stack changes (dependencies, versions)
+2. Pattern evolution (Redux → Zustand, etc.)
+3. Architecture changes (new modules, API endpoints)
+
+**MEDIUM Priority:**
+4. Build/deploy changes (new commands, env vars)
+5. Resolved issues (TODOs removed)
+
+**LOW Priority:**
+6. Minor updates (patch versions, cosmetic changes)
+
+---
+
+### Benefits
+
+- ✅ **Prevents drift:** Catch outdated docs immediately
+- ✅ **Low friction:** Auto-prompts, no manual tracking needed
+- ✅ **Actionable:** Shows exactly what to fix
+- ✅ **Flexible:** Ask mode (default) or auto mode (opt-in)
+- ✅ **Comprehensive:** Periodic audits catch everything
+- ✅ **Integrated:** Works with existing documentation structure
+
+---
+
+### What's Included in v1.0.5
+
+**New Files:**
+- `skills/doc-maintenance/SKILL.md` - Auto-reminder skill
+- `commands/audit-docs.md` - Drift detection command
+
+**Modified Files:**
+- `commands/init-project.md` - Adds maintenance section to generated CLAUDE.md
+
+**Plugin Components:**
+- ✅ 4 Skills (requirements-clarifier, implementation-planner, breakthrough-generator, **doc-maintenance**)
+- ✅ 3 Commands (init-project, init-personal, **audit-docs**)
+- ✅ Templates (personal + 7 project files)
+
+---
+
+### Usage Examples
+
+**After implementing feature:**
+```bash
+# Skill automatically activates
+"Documentation updates needed - update now?"
+→ Choose yes/no/auto
+```
+
+**Periodic audit:**
+```bash
+/thoughtful-dev:audit-docs
+→ Get concise drift report
+→ Fix issues
+```
+
+**Enable auto-updates:**
+```bash
+# Add to CLAUDE.md:
+## Documentation Maintenance
+Mode: auto
+```
+
+---
+
+### Technical Details
+
+Based on:
+- [CLAUDE.md Protocol](https://engineering-blog.anthropic.com) - Documentation maintenance best practices
+- Real-time drift detection via skill descriptions
+- Comparison of package.json, code structure, and documented state
+- Concise, actionable reporting format
+
+---
+
 ## [1.0.4] - 2025-10-26
 
 ### 🎯 Enhanced: Proper CLAUDE.md Memory Architecture

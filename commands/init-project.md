@@ -86,19 +86,36 @@ This file should contain:
 [2-3 sentence description from README or package.json]
 
 ## Essential Commands
-[Actual commands from package.json scripts]
+```bash
+[Actual commands from package.json scripts - dev, test, build]
+```
 
 ## Core Principles
 - MANDATORY: [Key rules discovered from codebase]
 - DO NOT: [Anti-patterns to avoid]
 
+## Documentation Maintenance
+Mode: ask
+
+The `doc-maintenance` skill will remind you to update documentation after:
+- Adding/removing dependencies
+- Changing architecture or patterns
+- Refactoring code structure
+
+Set to `auto` for automatic updates, or `ask` to be prompted (recommended).
+
+Run `/thoughtful-dev:audit-docs` periodically to check for drift.
+
 ## Imported Documentation
-@.claude/STACK.md - Tech stack details
-@.claude/ARCHITECTURE.md - System design
-@.claude/PATTERNS.md - Code conventions
-@.claude/STARTUP.md - Setup and troubleshooting
-@.claude/GOTCHAS.md - Known issues
-@.claude/DECISIONS.md - Architectural decisions
+
+When working on specific areas, these detailed docs are auto-loaded:
+
+@.claude/STACK.md - Tech stack with versions and rationale
+@.claude/ARCHITECTURE.md - System design and component structure
+@.claude/PATTERNS.md - Code conventions used in THIS project
+@.claude/STARTUP.md - Setup guide and troubleshooting
+@.claude/GOTCHAS.md - Known issues and workarounds
+@.claude/DECISIONS.md - Architectural decision history
 ```
 
 ### Step 4: Generate Detailed Documentation in .claude/
