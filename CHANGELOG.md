@@ -7,7 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [1.0.0] - 2024-10-26
+## [1.0.1] - 2025-10-26
+
+### 🐛 Bug Fixes
+
+**Marketplace Configuration:**
+- Fixed skill discovery by removing incorrect `commands` array from marketplace.json
+- Skills are now properly auto-discovered from the `skills/` directory
+- All three skills (requirements-clarifier, implementation-planner, breakthrough-generator) now load correctly
+
+### Technical Details
+
+Previously, the marketplace.json incorrectly listed SKILL.md files in the "commands" array. The "commands" field is only for slash commands, not skills. Skills are automatically discovered from the `skills/` directory without needing explicit registration.
+
+---
+
+## [1.0.0] - 2025-10-26
 
 ### 🎉 Initial Release
 
