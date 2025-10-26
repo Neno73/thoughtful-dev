@@ -39,7 +39,7 @@
         "documentation"
       ],
       "category": "productivity",
-      "strict": false
+      "strict": true
     }
   ]
 }

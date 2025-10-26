@@ -9,16 +9,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.1] - 2025-10-26
 
-### 🐛 Bug Fixes
+### 🐛 Critical Bug Fixes
 
-**Marketplace Configuration:**
-- Fixed skill discovery by removing incorrect `commands` array from marketplace.json
-- Skills are now properly auto-discovered from the `skills/` directory
+**Plugin Structure:**
+- **ADDED:** `plugin.json` file at root with explicit `skills` array registration
+- **CHANGED:** marketplace.json `strict` field from `false` to `true`
+- **REMOVED:** Incorrect `commands` array from marketplace.json
+
+**What This Fixes:**
 - All three skills (requirements-clarifier, implementation-planner, breakthrough-generator) now load correctly
+- Skills are properly registered and discoverable by Claude Code
+- Plugin follows correct Claude Code marketplace structure
 
 ### Technical Details
 
-Previously, the marketplace.json incorrectly listed SKILL.md files in the "commands" array. The "commands" field is only for slash commands, not skills. Skills are automatically discovered from the `skills/` directory without needing explicit registration.
+The plugin was missing a critical `plugin.json` file that explicitly registers skills. While `strict: false` allows marketplace-only configuration, skills specifically require the `skills` array in plugin.json with name, path, and description for each skill. The "commands" field in marketplace.json is only for slash commands, not for skills.
 
 ---
 
