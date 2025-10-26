@@ -1,0 +1,50 @@
+{
+  "name": "thoughtful-dev-marketplace",
+  "owner": {
+    "name": "Neno73",
+    "email": "[email protected]"
+  },
+  "metadata": {
+    "description": "Transform Claude Code into a thoughtful development partner with requirements clarification, implementation planning, and breakthrough generation",
+    "version": "1.0.0",
+    "pluginRoot": "./"
+  },
+  "plugins": [
+    {
+      "name": "thoughtful-dev",
+      "source": "./",
+      "description": "Complete thoughtful development workflow with 3 core skills: requirements-clarifier (prevents premature coding), implementation-planner (analyzes approaches and risks), and breakthrough-generator (systematic problem-solving when stuck). Includes safety-first git workflow, black-box architecture principles, and progressive documentation templates.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Neno73",
+        "email": "[email protected]"
+      },
+      "homepage": "https://github.com/Neno73/thoughtful-dev",
+      "repository": "https://github.com/Neno73/thoughtful-dev",
+      "license": "MIT",
+      "keywords": [
+        "development",
+        "workflow",
+        "planning",
+        "requirements",
+        "problem-solving",
+        "nextjs",
+        "strapi",
+        "medusa",
+        "typescript",
+        "tdd",
+        "architecture",
+        "safety",
+        "git-workflow",
+        "documentation"
+      ],
+      "category": "productivity",
+      "commands": [
+        "./skills/requirements-clarifier/SKILL.md",
+        "./skills/implementation-planner/SKILL.md",
+        "./skills/breakthrough-generator/SKILL.md"
+      ],
+      "strict": false
+    }
+  ]
+}

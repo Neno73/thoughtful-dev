@@ -1,0 +1,81 @@
+# OS Generated Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Editor Directories and Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*~
+.project
+.settings/
+.classpath
+
+# Temporary Files
+*.tmp
+*.bak
+*.cache
+*.log
+logs/
+tmp/
+temp/
+
+# Build Output (if any build tools are added)
+dist/
+build/
+out/
+*.build/
+
+# Dependencies (if any package managers are used)
+node_modules/
+.npm/
+.pnpm/
+.yarn/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Environment Files
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+.env.test
+
+# Testing
+coverage/
+.nyc_output/
+*.test.log
+
+# IDE Specific
+*.sublime-project
+*.sublime-workspace
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# System Files
+*.pid
+*.seed
+*.pid.lock
+
+# Backup Files
+*.orig
+*.backup
+
+# Local Configuration (personal overrides)
+local.config.json
+.local/
