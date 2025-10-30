@@ -2,7 +2,7 @@
 
 Transform Claude Code from a fast coder into a **thoughtful development partner**.
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
+![Version](https://img.shields.io/badge/version-1.1.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Claude Code](https://img.shields.io/badge/Claude%20Code-Plugin-purple)
 
@@ -20,14 +20,43 @@ Plus **safety-first workflows** (git branches, database protection), **black-box
 
 ---
 
+## 📦 Available Plugins
+
+This marketplace includes two complementary plugins:
+
+### 1. **thoughtful-dev** (Main Plugin)
+Transform Claude Code into a thoughtful development partner with requirements clarification, implementation planning, and breakthrough generation.
+
+**Install:**
+```bash
+/plugin install thoughtful-dev@thoughtful-dev-marketplace
+```
+
+### 2. **github-push-pr** (GitHub Automation)
+Complete GitHub workflow automation with security-first approach. Enforces feature branch workflow, runs security checks, creates PRs via GitHub CLI, and iterates on ClaudeBot feedback automatically.
+
+**Install:**
+```bash
+/plugin install github-push-pr@thoughtful-dev-marketplace
+```
+
+**Repository:** [Neno73/Github-pr-push](https://github.com/Neno73/Github-pr-push)
+
+---
+
 ## 🚀 Quick Install
 
 ### Option 1: Direct Install (Recommended)
 
 ```bash
-# Add marketplace and install plugin in one command
+# Add marketplace
 /plugin marketplace add Neno73/thoughtful-dev
+
+# Install thoughtful-dev (main plugin)
 /plugin install thoughtful-dev
+
+# Optionally install github-push-pr (GitHub automation)
+/plugin install github-push-pr
 ```
 
 ### Option 2: Step-by-Step
@@ -36,11 +65,12 @@ Plus **safety-first workflows** (git branches, database protection), **black-box
 # Add the marketplace
 /plugin marketplace add Neno73/thoughtful-dev
 
-# Browse available plugins
+# Browse available plugins (shows both plugins)
 /plugin
 
-# Install the plugin
+# Install one or both plugins
 /plugin install thoughtful-dev@thoughtful-dev-marketplace
+/plugin install github-push-pr@thoughtful-dev-marketplace
 ```
 
 ### Option 3: Auto-Install for Teams
@@ -57,11 +87,14 @@ Add to your project's `.claude/settings.json`:
       }
     }
   },
-  "enabledPlugins": ["thoughtful-dev"]
+  "enabledPlugins": [
+    "thoughtful-dev",
+    "github-push-pr"
+  ]
 }
 ```
 
-When team members trust the repository, Claude Code automatically installs the marketplace and plugin.
+When team members trust the repository, Claude Code automatically installs the marketplace and both plugins (or choose just one).
 
 ---
 
