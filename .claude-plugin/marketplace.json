@@ -5,8 +5,8 @@
     "email": "[email protected]"
   },
   "metadata": {
-    "description": "Transform Claude Code into a thoughtful development partner with requirements clarification, implementation planning, breakthrough generation, and automated GitHub PR workflows",
-    "version": "1.1.0",
+    "description": "Transform Claude Code into a thoughtful development partner with requirements clarification, implementation planning, and breakthrough generation",
+    "version": "1.0.5",
     "pluginRoot": "./"
   },
   "plugins": [
@@ -37,36 +37,6 @@
         "safety",
         "git-workflow",
         "documentation"
-      ],
-      "category": "productivity",
-      "strict": true
-    },
-    {
-      "name": "github-push-pr",
-      "source": "Neno73/Github-pr-push",
-      "description": "Complete GitHub workflow automation with 4 core skills: git-workflow-enforcer (ensures feature branch usage), pr-creator (automated PR creation with security checks), claudebot-feedback-loop (iterative ClaudeBot feedback application), and thoughtful-pr-workflow (end-to-end orchestrator). Prevents secrets commits, enforces git best practices, and automates PR iteration cycles.",
-      "version": "1.0.0",
-      "author": {
-        "name": "Neno73",
-        "email": "[email protected]"
-      },
-      "homepage": "https://github.com/Neno73/Github-pr-push",
-      "repository": "https://github.com/Neno73/Github-pr-push",
-      "license": "MIT",
-      "keywords": [
-        "git",
-        "github",
-        "pr",
-        "pull-request",
-        "automation",
-        "workflow",
-        "claudebot",
-        "feedback",
-        "security",
-        "ci-cd",
-        "code-review",
-        "git-workflow",
-        "branch-management"
       ],
       "category": "productivity",
       "strict": true
