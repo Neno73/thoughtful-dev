@@ -2,7 +2,7 @@
 
 Transform Claude Code from a fast coder into a **thoughtful development partner**.
 
-![Version](https://img.shields.io/badge/version-1.1.0-blue)
+![Version](https://img.shields.io/badge/version-1.1.1-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Claude Code](https://img.shields.io/badge/Claude%20Code-Plugin-purple)
 
